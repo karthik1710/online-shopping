@@ -7,6 +7,6 @@
 <title>Online Shopping</title>
 </head>
 <body>
-	$(greeting)
+	${greeting}
 </body>
 </html>
