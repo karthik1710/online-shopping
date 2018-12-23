@@ -13,7 +13,8 @@
    	">
 
 	<context:component-scan base-package="org.niit.onlineshopping.controller"/>
-
+	<context:component-scan base-package="org.niit.shoppingbackend.daoimpl"/>
+	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		
