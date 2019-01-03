@@ -51,7 +51,7 @@ public class HibernateConfig {
 		return builder.buildSessionFactory();	
 	}
 	
-	// all the hibernate properties will be returned in this method
+	// All the Hibernate properties will be returned in this method
 
 	private Properties getHibernateProperties() {
 		Properties properties = new Properties();

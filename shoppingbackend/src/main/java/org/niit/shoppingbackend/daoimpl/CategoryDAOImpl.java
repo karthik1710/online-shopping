@@ -3,13 +3,19 @@ package org.niit.shoppingbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import org.niit.shoppingbackend.dao.CategoryDAO;
 import org.niit.shoppingbackend.dto.Category;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 
+	@Autowired
+	private SessionFactory sessionFactory;
+	
 	private static List<Category> categories = new ArrayList<>();
 	
 	
@@ -45,14 +51,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		
 	}
-	
-	
+		
 	@Override
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return categories;
 	}
-
 
 	@Override
 	public Category get(int id) {
@@ -64,6 +68,23 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 		
 		return null;
+	}
+
+
+	@Override
+	@Transactional
+	public boolean add(Category category) {
+
+		try {
+			
+			sessionFactory.getCurrentSession().persist(category);
+			return true;
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+		
 	}
 
 }
