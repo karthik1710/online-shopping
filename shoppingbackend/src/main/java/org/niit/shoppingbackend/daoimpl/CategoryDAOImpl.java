@@ -59,32 +59,25 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public Category get(int id) {
-		
+	public Category get(int id) {		
 		// enchanced for loop
-		for(Category category : categories) {
-			
+		for(Category category : categories) {			
 			if(category.getId() == id) return category;
-		}
-		
+		}		
 		return null;
 	}
-
 
 	@Override
 	@Transactional
 	public boolean add(Category category) {
-
-		try {
-			
+		try {			
 			sessionFactory.getCurrentSession().persist(category);
 			return true;
 		}
 		catch (Exception ex) {
 			ex.printStackTrace();
 			return false;
-		}
-		
+		}		
 	}
 
 }
