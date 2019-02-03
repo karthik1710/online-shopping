@@ -1,12 +1,12 @@
-    <div class="container footer">
+ <div class="container footer" >
 
         <hr>
 
-        <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2018</p>
+                    <p>Copyright &copy; Company 2019 - Template by <a href="http://maxoffsky.com/">Maks</a>
+                    </p>
                 </div>
             </div>
         </footer>
