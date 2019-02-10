@@ -1,4 +1,4 @@
-package com.niit.onlineshopping.controller;
+package org.niit.onlineshopping.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
